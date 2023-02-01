@@ -1,7 +1,7 @@
 
 # Expense Management System
 
-This is a repository of "Expense Management System
+This is a repository of "Expense Management System"
 
 
 ## Project Contributors:
