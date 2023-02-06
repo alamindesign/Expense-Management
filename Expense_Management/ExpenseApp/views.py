@@ -6,3 +6,5 @@ from .models import DailyExpense
 class ExpenseView(ListView):
     model = DailyExpense
     template_name = 'index.html'
+# def list(request):
+#     all_object= DailyExpense.objects.all()
