@@ -9,8 +9,8 @@ class Item(models.Model):
         
 class Course(models.Model):
     course_id=models.IntegerField(default=0)
-    course_name=models.CharField(max_length=50)
-    course_duration= models.DateField()
+    course_name=models.CharField(max_length=100)
+    course_duration= models.CharField(max_length=20)
     
 class Cordinator(models.Model):
     cordinator_id=models.IntegerField(default=0)
