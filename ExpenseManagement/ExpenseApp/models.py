@@ -40,7 +40,7 @@ class Balance(models.Model):
     date=models.DateField()
     number_of_student=models.IntegerField(default=0)
     privious_balance=models.IntegerField(default=0)
-    amount=models.ForeignKey(Withdraw,on_delete=models.CASCADE)
+    withdraw_amount=models.PositiveIntegerField(default=0)
     total_cost=models.IntegerField(default=0)
     net_balance=models.IntegerField(default=0)
 
