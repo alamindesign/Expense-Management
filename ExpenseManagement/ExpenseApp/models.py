@@ -26,7 +26,7 @@ class DailyExpense(models.Model):
     date=models.DateField()
     
     def __str__(self):
-        return str(self.date)
+        return str(self.item_name)
 
 
 class Withdraw(models.Model):
