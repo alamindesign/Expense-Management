@@ -11,12 +11,16 @@ class Course(models.Model):
     course_id=models.IntegerField(default=0)
     course_name=models.CharField(max_length=100)
     course_duration= models.CharField(max_length=20)
+    def __str__(self):
+        return self.course_name
     
 class Cordinator(models.Model):
     cordinator_id=models.IntegerField(default=0)
     cordinator_name=models.CharField(max_length=50)
     cordinator_deg=models.CharField(max_length=50)
     cordinator_nid=models.IntegerField(default=0)
+    def __str__(self):
+        return self.cordinator_name
 
 class DailyExpense(models.Model):
     item_name=models.ForeignKey(Item,on_delete=models.CASCADE)
@@ -48,5 +52,5 @@ class Balance(models.Model):
 class Student(models.Model):
     course_id=models.ForeignKey(Course,on_delete=models.CASCADE)
     cordinator_id=models.ForeignKey(Cordinator,on_delete=models.CASCADE)
-    number_of_student=models.ForeignKey(Balance,on_delete=models.CASCADE)
+    number_of_student= models.PositiveSmallIntegerField(default=0)
     status=models.CharField(max_length=15)

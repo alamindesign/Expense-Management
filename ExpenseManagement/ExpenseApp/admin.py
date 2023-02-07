@@ -21,4 +21,4 @@ class BalanceAdmin(admin.ModelAdmin):
 admin.site.register(Balance,BalanceAdmin)
 class StudentAdmin(admin.ModelAdmin):
     list_display=('course_id','cordinator_id','number_of_student','status')
-admin.site.register(Student)
+admin.site.register(Student,StudentAdmin)
