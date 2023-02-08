@@ -22,16 +22,16 @@
       <nav>
         <h2 class="logo">Expense Management System</h2>
         <ul>
-          <li><a href="#">Home</a></li>
+          <li><a href="{% url 'home' %}">All Expense</a></li>
           <li><a href="#">Withdraw</a></li>
           <li><a href="#">Expense</a></li>
           <li><a href="#">Average</a></li>
         </ul>
         <button type="button">Login</button>
       </nav>
-    </div>
-    {% block content%}
+      {% block content%}
     {% endblock%}
+    </div>
     <!-- footer start -->
     <footer>
       <div class="row">
