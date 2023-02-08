@@ -1,0 +1,21 @@
+{% extends 'expenseApp/base.html'%}
+{% block content %}
+<div class="container">
+    <table class="table table-bordered table-hover">
+        <tr>
+            <th>Course</th>
+            <th>Course Coordinator</th>
+            <th>Amount</th>
+            <th>Date</th>
+        </tr>
+        {% for x in withdraw %}
+        <tr>
+            <td>{{x.course_id}}</td>
+            <td>{{x.cordinator_id}}</td>
+            <td>{{x.amount}}</td>
+            <td>{{x.date}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}
