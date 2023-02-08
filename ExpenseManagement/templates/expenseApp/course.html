@@ -1,11 +1,14 @@
 {% extends 'expenseApp/base.html'%}
 {% block content %}
 <div class="container">
-    <table class="table table-borderd table-hover">
+    <table class="table table-bordered table-hover">
         <tr>
             <th>Course</th>
             <th>Course Coordinator</th>
             <th>Number of student</th>
+            <th>Durations</th>
+            <th>Start Date</th>
+            <th>End Date</th>
             <th>Status</th>
         </tr>
         {% for x in course %}
@@ -13,6 +16,9 @@
             <td>{{x.course_id}}</td>
             <td>{{x.cordinator_id}}</td>
             <td>{{x.number_of_student}}</td>
+            <td>{{x.course_durations}}</td>
+            <td>{{x.start_date}}</td>
+            <td>{{x.end_date}}</td>
             <td>{{x.status}}</td>
         </tr>
         {% endfor %}
