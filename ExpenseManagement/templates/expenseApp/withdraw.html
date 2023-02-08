@@ -1,8 +1,21 @@
 {% extends 'expenseApp/base.html'%}
 {% block content %}
 <div class="container">
+<!-- filter start -->
+<div class="text-center">
+
+    <form action="" method="post">
+        {% csrf_token %}
+            <label for="date"><span style="font-weight: 500; font-size: 20px; padding-top:5px;">Date</span></label>
+            <input id="date" type="date" class="form-control" name="date" style="width: fit-content; margin: 0 auto;"><br>
+        <!-- It's time to submit this form -->
+            <input type="submit" value="Click to filter" class="btn btns btn-success mb-3">
+    </form>
+
+</div>
+<!-- filter end  -->
     <table class="table table-bordered table-hover">
-        <tr>
+        <tr class="text-bg-info">
             <th>Course</th>
             <th>Course Coordinator</th>
             <th>Amount</th>
