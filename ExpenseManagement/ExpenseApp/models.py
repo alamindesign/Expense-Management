@@ -53,4 +53,7 @@ class Student(models.Model):
     course_id=models.ForeignKey(Course,on_delete=models.CASCADE)
     cordinator_id=models.ForeignKey(Cordinator,on_delete=models.CASCADE)
     number_of_student= models.PositiveSmallIntegerField(default=0)
-    status=models.CharField(max_length=15)
+    course_durations = models.CharField(max_length=30, default=0)
+    start_date = models.DateField(default="2023-03-01")
+    end_date = models.DateField(default="2023-04-01")
+    status=models.CharField(max_length=15, default='active')
