@@ -7,3 +7,6 @@ def Home(request):
 def Courses(request):
     course = CourseDetails.objects.all()
     return render(request,'expenseApp/course.html',{'course':course})
+def Withdraws(request):
+    withdraw = Withdraw.objects.all()
+    return render(request,'expenseApp/withdraw.html',{'withdraw':withdraw})
