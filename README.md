@@ -1,6 +1,7 @@
 # Expense Management System 🥰🥰🥰
 
 This is a repository of "Expense Management System"
+Patwary Sir is the advisor of us!!!
 
 
 ## Project Contributors:
