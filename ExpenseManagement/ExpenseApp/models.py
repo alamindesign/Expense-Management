@@ -49,7 +49,7 @@ class Balance(models.Model):
     net_balance=models.IntegerField(default=0)
 
 
-class Student(models.Model):
+class CourseDetails(models.Model):
     course_id=models.ForeignKey(Course,on_delete=models.CASCADE)
     cordinator_id=models.ForeignKey(Cordinator,on_delete=models.CASCADE)
     number_of_student= models.PositiveSmallIntegerField(default=0)
