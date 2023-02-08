@@ -3,19 +3,17 @@
 <div class="container">
     <table class="table table-borderd table-hover">
         <tr>
-            <th>Item Name</th>
-            <th>Price</th>
-            <th>Quantity</th>
-            <th>Total Price</th>
-            <th>Date</th>
+            <th>Course</th>
+            <th>Course Coordinator</th>
+            <th>Number of student</th>
+            <th>Status</th>
         </tr>
-        {% for x in coursel %}
+        {% for x in course %}
         <tr>
-            <td>{{x.item_name}}</td>
-            <td>{{x.item_price}}</td>
-            <td>{{x.item_quantity}}</td>
-            <td>{{x.total_price}}</td>
-            <td>{{x.date}}</td>
+            <td>{{x.course_id}}</td>
+            <td>{{x.cordinator_id}}</td>
+            <td>{{x.number_of_student}}</td>
+            <td>{{x.status}}</td>
         </tr>
         {% endfor %}
     </table>
