@@ -1,0 +1,25 @@
+{% extends 'expenseApp/base.html'%}
+{% block content %}
+<div class="container">
+    <table class="table table-bordered table-hover">
+        <tr>
+            <th>Date</th>
+            <th># of Student </th>
+            <th>Previous Balance</th>
+            <th>Withdraw</th>
+            <th>Total Cost</th>
+            <th>Net Balance</th>
+        </tr>
+        {% for x in balance %}
+        <tr>
+            <td>{{x.date}}</td>
+            <td>{{x.number_of_student}}</td>
+            <td>{{x.privious_balance}}</td>
+            <td>{{x.withdraw_amount}}</td>
+            <td>{{x.total_cost}}</td>
+            <td>{{x.net_balance}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}

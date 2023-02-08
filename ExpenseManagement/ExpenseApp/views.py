@@ -10,3 +10,7 @@ def Courses(request):
 def Withdraws(request):
     withdraw = Withdraw.objects.all()
     return render(request,'expenseApp/withdraw.html',{'withdraw':withdraw})
+
+def DailyBalance(request):
+    balance = Balance.objects.all()
+    return render(request,'expenseApp/dailyBalance.html',{'balance':balance})
