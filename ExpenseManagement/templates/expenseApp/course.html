@@ -1,0 +1,23 @@
+{% extends 'expenseApp/base.html'%}
+{% block content %}
+<div class="container">
+    <table class="table table-borderd table-hover">
+        <tr>
+            <th>Item Name</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Total Price</th>
+            <th>Date</th>
+        </tr>
+        {% for x in coursel %}
+        <tr>
+            <td>{{x.item_name}}</td>
+            <td>{{x.item_price}}</td>
+            <td>{{x.item_quantity}}</td>
+            <td>{{x.total_price}}</td>
+            <td>{{x.date}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}
