@@ -2,14 +2,13 @@
 {% block content %}
 <div class="container">
 <!-- filter start -->
-<div class="text-center">
-
-    <form action="" method="post">
+<div class="text-center py-2">
+    <h3 class="text-center py-2 text-decoration-underline">All Expenses</h3>
+    <form class="d-flex justify-content-end align-items-center" action="" method="post">
         {% csrf_token %}
-            <label for="date"><span style="font-weight: 500; font-size: 20px; padding-top:5px;">Date</span></label>
-            <input id="date" type="date" class="form-control" name="date" style="width: fit-content; margin: 0 auto;"><br>
+            <input id="date" type="date" class="form-control" name="date" style="width: fit-content;">
         <!-- It's time to submit this form -->
-            <input type="submit" value="Click to filter" class="btn btns btn-success mb-3">
+            <input type="submit" value="Click to filter" class="btn btns btn-success">
     </form>
 
 </div>
