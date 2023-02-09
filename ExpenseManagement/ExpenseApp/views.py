@@ -8,6 +8,8 @@ def Home(request):
     #================== date filter start ======================#
     if request.method == 'POST':
         date = request.POST.get('date')
+        if date == "":
+            return render(request,'expenseApp/index.html')
         filtered_data = DailyExpense.objects.filter(date__exact=date)
         return render(request, 'expenseApp/index.html',{'expense':filtered_data})
 #================== date filter end ======================#
@@ -24,10 +26,13 @@ def Courses(request):
 
 def Withdraws(request):
     #================== date filter start ======================#
+    
     if request.method == 'POST':
         date = request.POST.get('date')
+        if date == "":
+            return render(request,'expenseApp/withdraw.html')
         filtered_data = Withdraw.objects.filter(date__exact=date)
-        return render(request, 'expenseApp/withdraw.html',{'withdraw':filtered_data})
+        return render(request, 'expenseApp/withdraw.html',{'withdraw':filtered_data, 'date':date})
 #================== date filter end ======================#
     withdraw = Withdraw.objects.all()
     return render(request,'expenseApp/withdraw.html',{'withdraw':withdraw})
@@ -38,6 +43,8 @@ def DailyBalance(request):
         #================== date filter start ======================#
     if request.method == 'POST':
         date = request.POST.get('date')
+        if date == "":
+            return render(request,'expenseApp/dailyBalance.html')
         filtered_data = Balance.objects.filter(date__exact=date)
         return render(request, 'expenseApp/dailyBalance.html',{'balance':filtered_data})
 #================== date filter end ======================#
