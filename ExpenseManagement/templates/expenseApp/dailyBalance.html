@@ -24,12 +24,12 @@
         </tr>
         {% for x in balance %}
         <tr>
-            <td>{{x.date}}</td>
-            <td>{{x.number_of_student}}</td>
-            <td>{{x.privious_balance}}</td>
-            <td>{{x.withdraw_amount}}</td>
-            <td>{{x.total_cost}}</td>
-            <td>{{x.net_balance}}</td>
+            <td class="dailyExpenseDate">{{x.date}}</td>
+            <td class="numberOfStudent">{{x.number_of_student}}</td>
+            <td class="priviousBalance">{{x.privious_balance}}</td>
+            <td class="withdrawAmount">{{x.withdraw_amount}}</td>
+            <td class="totalCOst">{{x.total_cost}}</td>
+            <td class="netBalance">{{x.net_balance}}</td>
         </tr>
         {% endfor %}
     </table>

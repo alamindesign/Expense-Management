@@ -13,12 +13,12 @@
         </tr>
         {% for x in course %}
         <tr>
-            <td>{{x.course_id}}</td>
-            <td>{{x.cordinator_id}}</td>
-            <td>{{x.number_of_student}}</td>
-            <td>{{x.course_durations}}</td>
-            <td>{{x.start_date}}</td>
-            <td>{{x.end_date}}</td>
+            <td class="courseId">{{x.course_id}}</td>
+            <td class="cordinatorId">{{x.cordinator_id}}</td>
+            <td class="numberOfStudent">{{x.number_of_student}}</td>
+            <td class="courseDurations">{{x.course_durations}}</td>
+            <td class="startDate">{{x.start_date}}</td>
+            <td class="endDate">{{x.end_date}}</td>
         </tr>
         {% endfor %}
     </table>

@@ -22,10 +22,10 @@
         </tr>
         {% for x in withdraw %}
         <tr>
-            <td>{{x.course_id}}</td>
-            <td>{{x.cordinator_id}}</td>
-            <td>{{x.amount}}</td>
-            <td>{{x.date}}</td>
+            <td class="courseId">{{x.course_id}}</td>
+            <td class="cordinatorId">{{x.cordinator_id}}</td>
+            <td class="amount">{{x.amount}}</td>
+            <td class="withdrawDate">{{x.date}}</td>
         </tr>
         {% endfor %}
     </table>
