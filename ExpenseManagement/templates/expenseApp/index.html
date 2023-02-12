@@ -32,6 +32,8 @@
         {% endfor %}
     </table>
         <!-- pagination start  -->
+    {% if expense.has_previous or expense.has_next %}
+
         <div class="pagination">
             {% if expense.has_previous %}
               <a class="btn btn-outline-secondary" href="?page={{ expense.previous_page_number }}">previous</a>&nbsp;&nbsp;
@@ -41,6 +43,8 @@
               <a class="btn btn-outline-secondary" href="?page={{ expense.next_page_number }}">next</a>
             {% endif %}
           </div>
+    {% endif %}
         <!-- pagination end    -->
+
 </div>
 {% endblock %}
