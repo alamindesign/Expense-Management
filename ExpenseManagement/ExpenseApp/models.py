@@ -42,7 +42,6 @@ class Withdraw(models.Model):
 class Balance(models.Model):
     date=models.DateField()
     number_of_student=models.IntegerField(default=0)
-    privious_balance=models.IntegerField(default=0)
     withdraw_amount=models.PositiveIntegerField(default=0)
     total_cost=models.IntegerField(default=0)
 
