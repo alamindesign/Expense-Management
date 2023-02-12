@@ -31,16 +31,16 @@
         </tr>
         {% endfor %}
     </table>
-    <!-- pagination start  -->
-    <div class="pagination text-center">
-        {% if expense.has_previous %}
-          <a class="btn btn-outline-secondary" href="?page={{ expense.previous_page_number }}">previous</a>&nbsp;&nbsp;
-        {% endif %}
-        <span class="page-number mt-1">Page {{ expense.number }} of {{ expense.paginator.num_pages }}</span>&nbsp;&nbsp;
-        {% if expense.has_next %}
-          <a class="btn btn-outline-secondary" href="?page={{ expense.next_page_number }}">next</a>
-        {% endif %}
-      </div>
-    <!-- pagination end    -->
+        <!-- pagination start  -->
+        <div class="pagination">
+            {% if expense.has_previous %}
+              <a class="btn btn-outline-secondary" href="?page={{ expense.previous_page_number }}">previous</a>&nbsp;&nbsp;
+            {% endif %}
+            <span class="page-number mt-1 mx-auto">Page {{ expense.number }} of {{ expense.paginator.num_pages }}</span>&nbsp;&nbsp;
+            {% if expense.has_next %}
+              <a class="btn btn-outline-secondary" href="?page={{ expense.next_page_number }}">next</a>
+            {% endif %}
+          </div>
+        <!-- pagination end    -->
 </div>
 {% endblock %}
