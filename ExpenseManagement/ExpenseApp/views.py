@@ -1,3 +1,4 @@
+from django.core.paginator import Paginator  # for paginatior
 from django.shortcuts import render
 
 from .models import *
@@ -14,8 +15,16 @@ def Home(request):
         filtered_data = DailyExpense.objects.filter(date__exact=date)
         return render(request, 'expenseApp/index.html',{'expense':filtered_data})
 #================== date filter end ======================#
-    all_expense = DailyExpense.objects.all()
-    return render(request,'expenseApp/index.html',{'expense': all_expense})
+    all_expense_list = DailyExpense.objects.all()
+    # Create a paginator object with a specified number of objects per page
+    paginator = Paginator(all_expense_list, 10)
+    
+    # Get the page number from the request query string, default to 1
+    page_number = request.GET.get('page', 1)
+    
+    # Use the paginator to get the specified page
+    expense = paginator.get_page(page_number)
+    return render(request,'expenseApp/index.html',{'expense': expense})
 
 
 
