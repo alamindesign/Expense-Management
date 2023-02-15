@@ -10,7 +10,9 @@ def Home(request):
 #================== date filter start ======================#
     if request.method == 'POST':
         date = request.POST.get('date')
-        if date == "":
+        date2 =request.POST.get('date2')
+        if date == "" or date2 =="":
+            
             all_expense_list = DailyExpense.objects.all()
             # Create a paginator object with a specified number of objects per page
             paginator = Paginator(all_expense_list, 10)
@@ -21,7 +23,7 @@ def Home(request):
             # Use the paginator to get the specified page
             expense = paginator.get_page(page_number)
             return render(request,'expenseApp/index.html',{'expense': expense})
-        filtered_data = DailyExpense.objects.filter(date__exact=date)
+        filtered_data = DailyExpense.objects.filter(date__range=[date,date2])
         return render(request, 'expenseApp/index.html',{'expense':filtered_data})
 #================== date filter end ======================#
     all_expense_list = DailyExpense.objects.all()
