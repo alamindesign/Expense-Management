@@ -1,6 +1,6 @@
 from django.core.paginator import Paginator  # for paginatior
 from django.shortcuts import render
-
+from django.db.models import Sum
 from .models import *
 
 # Create your views here.
@@ -71,5 +71,7 @@ def DailyBalance(request):
         filtered_data = Balance.objects.filter(date__exact=date)
         return render(request, 'expenseApp/dailyBalance.html',{'balance':filtered_data})
 #================== date filter end ======================#
-    balance = Balance.objects.all()
-    return render(request,'expenseApp/dailyBalance.html',{'balance':balance})
+    balance = Withdraw.objects.values('date').annotate(sum = Sum('amount')).order_by('date')
+    total_cost= DailyExpense.objects.values('date').annotate(cost=Sum('item_price'))
+    context = {'balance':balance,'total_cost':total_cost}
+    return render(request,'expenseApp/dailyBalance.html',context)
