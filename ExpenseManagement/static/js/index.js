@@ -1,14 +1,14 @@
 // Daily expenses calculating total price
-let itemPrice = document.querySelectorAll(".itemPrice");
-let priceArray = Array.from(itemPrice);
-let itemQuantity = document.querySelectorAll(".itemQuantity");
-let quantityArray = Array.from(itemQuantity);
-let totalPrice = document.querySelectorAll(".totalPrice");
-let totalPriceArray = Array.from(totalPrice);
-for(i = 0; i < priceArray.length; i++){
-    let total = (Number(priceArray[i].innerHTML) * Number(quantityArray[i].innerHTML));
-    totalPriceArray[i].innerHTML = total;
-}
+// let itemPrice = document.querySelectorAll(".itemPrice");
+// let priceArray = Array.from(itemPrice);
+// let itemQuantity = document.querySelectorAll(".itemQuantity");
+// let quantityArray = Array.from(itemQuantity);
+// let totalPrice = document.querySelectorAll(".totalPrice");
+// let totalPriceArray = Array.from(totalPrice);
+// for(i = 0; i < priceArray.length; i++){
+//     let total = (Number(priceArray[i].innerHTML) * Number(quantityArray[i].innerHTML));
+//     totalPriceArray[i].innerHTML = total;
+// }
 
 // Balance  Calculating net balance
 let previousBalance = document.querySelectorAll(".priviousBalance");

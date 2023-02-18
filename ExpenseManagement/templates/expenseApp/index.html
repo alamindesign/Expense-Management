@@ -1,4 +1,5 @@
 {% extends 'expenseApp/base.html' %}
+<!-- adding custom filter -->
 {% load custom_filter %}
 {% block content %}
 <div class="container">
@@ -28,7 +29,8 @@
             <td class="itemName">{{x.item_name}}</td>
             <td class="itemPrice">{{x.item_price}}</td>
             <td class="itemQuantity">{{x.item_quantity}}</td>
-            <td class="totalPrice"></td>
+            <!-- TOTAL_PIRICE is the filter name  -->
+            <td class="totalPrice">{{x.item_price | TOTAL_PRICE:x.item_quantity}}</td>
             <td class="currentDate">{{x.date}}</td>
         </tr>
         {% endfor %}
