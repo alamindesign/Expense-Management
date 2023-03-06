@@ -25,7 +25,9 @@
         {% for date, data in combined_dict.items %}
         <tr>
             <td class="dailyExpenseDate">{{ date }}</td>
-            <td class="numberOfStudent">200</td>
+            {% for stu in student %}
+            <td class="numberOfStudent">{{ stu.sum }}</td>
+            {% endfor %}
             <td class="priviousBalance"></td>
             <td class="withdrawAmount">{{ data.balance }}</td>
             <td class="totalCOst">{{ data.total_cost }}</td>

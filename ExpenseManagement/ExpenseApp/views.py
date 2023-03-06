@@ -93,6 +93,7 @@ def DailyBalance(request):
     # chatgpt
 
     # Suppose you have two querysets with date-related data and sums:
+    student = CourseDetails.objects.values('status').annotate(sum= Sum('number_of_student'))
     balance = Withdraw.objects.values('date').annotate(sum=Sum('amount')).order_by('date')
     total_cost = DailyExpense.objects.values('date').annotate(cost=Sum('Total')).order_by('date')
 
@@ -118,5 +119,5 @@ def DailyBalance(request):
     #  datetime.date(2022, 3, 5): {'balance': 20, 'total_cost': 10}}
 
     # You can then pass the sorted dictionary to your view context:
-    context = {'combined_dict': sorted_dict}
+    context = {'combined_dict': sorted_dict,'student':student}
     return render(request, 'expenseApp/dailyBalance.html', context)
