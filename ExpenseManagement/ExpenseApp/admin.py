@@ -11,7 +11,7 @@ class CordinatorAdmin(admin.ModelAdmin):
     list_display=('id','cordinator_id','cordinator_name','cordinator_deg','cordinator_nid')
 admin.site.register(Cordinator, CordinatorAdmin)
 class DailyExpenseAdmin(admin.ModelAdmin):
-    list_display=('id','date','item_name','item_price','item_quantity')
+    list_display=('id','date','item_name','item_price','item_quantity','total')
 admin.site.register(DailyExpense,DailyExpenseAdmin)
 class WithdrawAdmin(admin.ModelAdmin):
     list_display=('withdraw_id','course_id','cordinator_id','amount','date')

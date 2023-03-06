@@ -26,6 +26,9 @@ class DailyExpense(models.Model):
     item_name=models.ForeignKey(Item,on_delete=models.CASCADE)
     item_price=models.IntegerField(default=0)
     item_quantity=models.IntegerField(default=0)
+    def Total(self):
+        return self.item_price*self.item_quantity
+    total = Total
     date=models.DateField()
     
     def __str__(self):
@@ -44,7 +47,6 @@ class Balance(models.Model):
     number_of_student=models.IntegerField(default=0)
     withdraw_amount=models.PositiveIntegerField(default=0)
     total_cost=models.IntegerField(default=0)
-
 
 class CourseDetails(models.Model):
     course_id=models.ForeignKey(Course,on_delete=models.CASCADE)

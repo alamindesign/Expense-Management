@@ -39,7 +39,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'ExpenseApp',
-    'django.core.paginator', #for pagination
 ]
 
 MIDDLEWARE = [
