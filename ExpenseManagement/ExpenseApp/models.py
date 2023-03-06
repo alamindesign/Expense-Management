@@ -26,7 +26,9 @@ class DailyExpense(models.Model):
     item_name=models.ForeignKey(Item,on_delete=models.CASCADE)
     item_price=models.IntegerField(default=0)
     item_quantity=models.IntegerField(default=0)
+    total = models.IntegerField(default=0)
     date=models.DateField()
+    voucher_no = models.PositiveSmallIntegerField()
     
     def __str__(self):
         return str(self.item_name)

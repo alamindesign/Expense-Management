@@ -30,7 +30,7 @@
             <td class="itemPrice">{{x.item_price}}</td>
             <td class="itemQuantity">{{x.item_quantity}}</td>
             <!-- TOTAL_PIRICE is the filter name  -->
-            <td class="totalPrice">{{x.item_price | TOTAL_PRICE:x.item_quantity}}</td>
+            <td class="totalPrice">{{x.total}}</td>
             <td class="currentDate">{{x.date}}</td>
         </tr>
         {% endfor %}
