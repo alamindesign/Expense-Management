@@ -11,7 +11,6 @@
         <!-- It's time to submit this form -->
             <input type="submit" value="Click to filter" class="btn btns btn-success">
     </form>
-
 </div>
 <!-- filter end  -->
     <table class="table table-bordered table-hover">
@@ -23,16 +22,17 @@
             <th>Total Cost</th>
             <th>Net Balance</th>
         </tr>
-        {% for x in balance %}
+        {% for date, data in combined_dict.items %}
         <tr>
-            <td class="dailyExpenseDate">{{x.date}}</td>
-            <td class="numberOfStudent">{{x.number_of_student}}</td>
+            <td class="dailyExpenseDate">{{ date }}</td>
+            <td class="numberOfStudent">200</td>
             <td class="priviousBalance"></td>
-            <td class="withdrawAmount">{{x.sum}}</td>
-            <td class="totalCOst">total_cost.cost</td>
+            <td class="withdrawAmount">{{ data.balance }}</td>
+            <td class="totalCOst">{{ data.total_cost }}</td>
             <td class="netBalance"></td>
         </tr>
         {% endfor %}
     </table>
 </div>
+  
 {% endblock %}

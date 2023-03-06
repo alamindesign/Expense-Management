@@ -29,6 +29,7 @@ class DailyExpense(models.Model):
     def Total(self):
         return self.item_price*self.item_quantity
     total = Total
+    Total = models.IntegerField(default=2000)
     date=models.DateField()
     
     def __str__(self):
