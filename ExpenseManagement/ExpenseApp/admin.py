@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Item,Course,Cordinator,DailyExpense,Withdraw,Balance,CourseDetails
+from .models import Item,Course,Cordinator,DailyExpense,Withdraw,CourseDetails
 # Register your models here.
 class ItemAdmin(admin.ModelAdmin):
     list_display=('id','item_name')
@@ -16,9 +16,7 @@ admin.site.register(DailyExpense,DailyExpenseAdmin)
 class WithdrawAdmin(admin.ModelAdmin):
     list_display=('withdraw_id','course_id','cordinator_id','amount','date')
 admin.site.register(Withdraw,WithdrawAdmin)
-class BalanceAdmin(admin.ModelAdmin):
-    list_display=('date','number_of_student','withdraw_amount','total_cost')
-admin.site.register(Balance,BalanceAdmin)
+
 class StudentAdmin(admin.ModelAdmin):
     list_display=('course_id','cordinator_id','number_of_student','status')
 admin.site.register(CourseDetails,StudentAdmin)
